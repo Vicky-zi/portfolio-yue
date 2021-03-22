@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳氏工程 - 首頁</title>
+    <link rel="img/logo-sm.png" href="...">
+    <meta name="description" content="裝潢, 室內設計,室內工程 ">
+    <meta name='description' content='裝潢, 室內設計, 室內工程, 溫馨, 專業' />
+
+    <meta property="og:title" content="陳氏工程" />
+    <meta property="og:description" content="陳氏工程">
+    <meta property="og:type" content="陳氏工程" />
+    <meta property="og:url" content="陳氏工程" />
+    <meta property="og:image" content="陳氏工程" />
+    <link href="img/logo-sm.png" rel="icon" />
+
+    <!-- IE相容性 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/all.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="head">
+            <h1>CHEN'S COMPANY
+                <a href="#messenger" class="scrollTop"><img src="img/arrow-down.png" width="80" height="64"></a>
+            </h1>
+
+        </div>
+
+        <div class="content">
+
+            <ul class="content-t">
+                <li class="disabled">
+                    <a href="page-1.html">
+                        <img src="https://picsum.photos/200" alt="">
+                        <h3 class="show">HOUSE</h3>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="page-1.html">
+                        <img src="https://picsum.photos/200" alt="">
+                        <h3 class="show">KITCHEN</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-1.html">
+                        <img src="https://picsum.photos/200" alt="">
+                        <h3 class="show">BATHROOM</h3>
+                    </a>
+                </li>
+            </ul>
+            <ul class="content-b">
+                <li>
+                    <a href="page-1.html">
+                        <img src="https://picsum.photos/200" alt="">
+                        <h3 class="show">ROOM</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-1.html">
+                        <img src="https://picsum.photos/200" alt="">
+                        <h3 class="show">OUTSIDE</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="gray" id="messenger"></div>
+        <h2 class="main-text">歡迎來詢問</h2>
+        <div class="messenger">
+            <div class="calendar">
+                <div class="title">
+                    <a href="" id="prev"><img src="https://upload.cc/i1/2020/12/13/1TZnqe.png"></a>
+                    <div class="day">
+                        <h1 class="green" id="calendar-title">Month</h1>
+                        <h2 class="green small" id="calendar-year">Year</h2>
+                    </div>
+                    <a href="" id="next"><img src="https://upload.cc/i1/2020/12/13/kxweGc.png"></a>
+                </div>
+                <div class="body">
+                    <div class="lightgrey body-list">
+                        <ul>
+                            <li>MON</li>
+                            <li>TUE</li>
+                            <li>WED</li>
+                            <li>THU</li>
+                            <li>FRI</li>
+                            <li>SAT</li>
+                            <li>SUN</li>
+                        </ul>
+                    </div>
+                    <div class="darkgrey body-list">
+                        <ul id="days">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="me">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+                        <label for="name">姓名</label>
+                        <input type="name" id="name" placeholder="姓名" />
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email" />
+                        <label for="tel">電話</label>
+                        <input type="tel" id="tel" placeholder="0912345678" />
+                        <button type="submit" class="pure-button pure-button-primary">寄出</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-l">
+                <div class="f-1">
+                    <h3>關於我們</h3>
+                    <p>我們是有著專業、熱忱、用心的工作團隊，客戶滿意度是我們至上的目標。</p>
+                </div>
+                <div class="f-2">
+                    <div class="mo-us">
+
+                        <h3>聯絡方式</h3>
+                        <ul class="about">
+                            <li>
+                                <p>基隆市中正五路到底</p>
+                            </li>
+                            <li>
+                                <p><a href="tel:0912345678">+886 878 878</a></p>
+                            </li>
+                            <li>
+                                <p><a href="#">servce@servce.com</a></p>
+                            </li>
+                            <li class="footer-f-right">
+                                <a href="#"><img src="https://upload.cc/i1/2019/06/13/QibydJ.png" alt="facebook"></a>
+                                <a href="#"><img src="https://upload.cc/i1/2019/06/13/zFX8rS.png" alt="twitter"></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="mob-logo">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="">
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+
+        var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_name = ["January", "Febrary", "March", "April", "May", "June", "July", "Auguest", "September", "October", "November", "December"];
+
+        var holder = document.getElementById("days");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var ctitle = document.getElementById("calendar-title");
+        var cyear = document.getElementById("calendar-year");
+
+        var my_date = new Date();
+        var my_year = my_date.getFullYear();
+        var my_month = my_date.getMonth();
+        var my_day = my_date.getDate();
+
+        //获取某年某月第一天是星期几
+        function dayStart(month, year) {
+            var tmpDate = new Date(year, month, 1);
+            return (tmpDate.getDay());
+        }
+
+        //计算某年是不是闰年，通过求年份除以4的余数即可
+        function daysMonth(month, year) {
+            var tmp = year % 4;
+            if (tmp == 0) {
+                return (month_olympic[month]);
+            } else {
+                return (month_normal[month]);
+            }
+        }
+
+        function refreshDate() {
+            var str = "";
+            var totalDay = daysMonth(my_month, my_year); //获取该月总天数
+            var firstDay = dayStart(my_month, my_year); //获取该月第一天是星期几
+            var myclass;
+            for (var i = 1; i < firstDay; i++) {
+                str += "<li></li>"; //为起始日之前的日期创建空白节点
+            }
+            for (var i = 1; i <= totalDay; i++) {
+                if ((i < my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) || my_year < my_date.getFullYear() || (my_year == my_date.getFullYear() && my_month < my_date.getMonth())) {
+                    myclass = " class='lightgrey'"; //当该日期在今天之前时，以浅灰色字体显示
+                } else if (i == my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) {
+                    myclass = " class='green greenbox'"; //当天日期以绿色背景突出显示
+                } else {
+                    myclass = " class='darkgrey'"; //当该日期在今天之后时，以深灰字体显示
+                }
+                str += "<li" + myclass + ">" + i + "</li>"; //创建日期节点
+            }
+            holder.innerHTML = str; //设置日期显示
+            ctitle.innerHTML = month_name[my_month]; //设置英文月份显示
+            cyear.innerHTML = my_year; //设置年份显示
+        }
+        refreshDate(); //执行该函数
+
+        prev.onclick = function (e) {
+            e.preventDefault();
+            my_month--;
+            if (my_month < 0) {
+                my_year--;
+                my_month = 11;
+            }
+            refreshDate();
+        }
+        next.onclick = function (e) {
+            e.preventDefault();
+            my_month++;
+            if (my_month > 11) {
+                my_year++;
+                my_month = 0;
+            }
+            refreshDate();
+        }
+
+    </script>
+
+
+</body>
+
+</html>

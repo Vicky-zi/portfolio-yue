@@ -1,0 +1,61 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-family: Microsoft JhengHei;
+  line-height: 50px;
+}
+.nav li {
+  width: 15%;
+  text-align: center;
+}
+.nav li a {
+  display: block;
+  cursor: pointer;
+}
+.nav li a:hover {
+  background-color: #ffffb3;
+  border-bottom: 1px solid #ffe082;
+}
+
+.head-room {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a08f57;
+}
+.head-room .swiper-container {
+  width: 300px;
+  height: 350px;
+  margin: 1% 2% 3% 1%;
+}
+.head-room .swiper-container .swiper-pagination-bullets {
+  left: 0;
+  right: none;
+}
+.head-room .swiper-container .swiper-button-prev, .head-room .swiper-container .swiper-button-next {
+  color: #efe9e7;
+}
+.head-room .introduction {
+  line-height: 40px;
+}
+.head-room .introduction h3 {
+  font-size: 60px;
+}
+
+.main-room {
+  background-color: #a08f57;
+  padding: 5% 3%;
+}
+.main-room h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 3%;
+}
+.main-room .min-room {
+  display: flex;
+  justify-content: space-evenly;
+}
+.main-room .min-room li {
+  margin: 0 1%;
+}

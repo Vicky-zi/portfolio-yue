@@ -1,0 +1,27 @@
+.footer {
+  background-color: #a08f57;
+  color: #000;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+}
+.footer .footer-l {
+  display: flex;
+}
+.footer .footer-l .f-1 h3, .footer .footer-l .f-2 h3 {
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+.footer .footer-l .f-1, .footer .footer-l .f-2 {
+  width: 50%;
+  padding: 20px 0;
+  line-height: 30px;
+  margin-top: 5%;
+}
+.footer .footer-l .f-2 a {
+  text-decoration: none;
+  color: #000;
+}
+.footer .footer-l .f-1 {
+  margin-right: 10%;
+}

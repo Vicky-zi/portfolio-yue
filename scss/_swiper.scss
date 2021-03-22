@@ -1,0 +1,19 @@
+
+.head-room {
+
+    .swiper-container {
+        width: 300px;
+        height: 350px;
+        margin: 1% 2% 3% 1%;
+
+    }
+
+    .swiper-pagination {
+        left :0;
+        right: none;
+    }
+    .swiper-button-prev ,.swiper-button-next {
+        color: #efe9e7;
+    }
+}
+

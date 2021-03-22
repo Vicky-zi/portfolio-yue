@@ -1,0 +1,888 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*csslint box-model:false*/
+/*
+Box-model set to false because we're setting a height on select elements, which
+also have border and padding. This is done because some browsers don't render
+the padding. We explicitly set the box-model for select elements to border-box,
+so we can ignore the csslint warning.
+*/
+.pure-form input[type=text],
+.pure-form input[type=password],
+.pure-form input[type=email],
+.pure-form input[type=url],
+.pure-form input[type=date],
+.pure-form input[type=month],
+.pure-form input[type=time],
+.pure-form input[type=datetime],
+.pure-form input[type=datetime-local],
+.pure-form input[type=week],
+.pure-form input[type=number],
+.pure-form input[type=search],
+.pure-form input[type=tel],
+.pure-form input[type=color],
+.pure-form select,
+.pure-form textarea {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.pure-form input:not([type]) {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+/* May be able to remove this tweak as color inputs become more standardized across browsers. */
+.pure-form input[type=color] {
+  padding: 0.2em 0.5em;
+}
+
+.pure-form input[type=text]:focus,
+.pure-form input[type=password]:focus,
+.pure-form input[type=email]:focus,
+.pure-form input[type=url]:focus,
+.pure-form input[type=date]:focus,
+.pure-form input[type=month]:focus,
+.pure-form input[type=time]:focus,
+.pure-form input[type=datetime]:focus,
+.pure-form input[type=datetime-local]:focus,
+.pure-form input[type=week]:focus,
+.pure-form input[type=number]:focus,
+.pure-form input[type=search]:focus,
+.pure-form input[type=tel]:focus,
+.pure-form input[type=color]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+  outline: 0;
+  border-color: #129FEA;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.pure-form input:not([type]):focus {
+  outline: 0;
+  border-color: #129FEA;
+}
+
+.pure-form input[type=file]:focus,
+.pure-form input[type=radio]:focus,
+.pure-form input[type=checkbox]:focus {
+  outline: thin solid #129FEA;
+  outline: 1px auto #129FEA;
+}
+
+.pure-form .pure-checkbox,
+.pure-form .pure-radio {
+  margin: 0.5em 0;
+  display: block;
+}
+
+.pure-form input[type=text][disabled],
+.pure-form input[type=password][disabled],
+.pure-form input[type=email][disabled],
+.pure-form input[type=url][disabled],
+.pure-form input[type=date][disabled],
+.pure-form input[type=month][disabled],
+.pure-form input[type=time][disabled],
+.pure-form input[type=datetime][disabled],
+.pure-form input[type=datetime-local][disabled],
+.pure-form input[type=week][disabled],
+.pure-form input[type=number][disabled],
+.pure-form input[type=search][disabled],
+.pure-form input[type=tel][disabled],
+.pure-form input[type=color][disabled],
+.pure-form select[disabled],
+.pure-form textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.pure-form input:not([type])[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+.pure-form input[readonly],
+.pure-form select[readonly],
+.pure-form textarea[readonly] {
+  background-color: #eee;
+  /* menu hover bg color */
+  color: #777;
+  /* menu text color */
+  border-color: #ccc;
+}
+
+.pure-form input:focus:invalid,
+.pure-form textarea:focus:invalid,
+.pure-form select:focus:invalid {
+  color: #b94a48;
+  border-color: #e9322d;
+}
+
+.pure-form input[type=file]:focus:invalid:focus,
+.pure-form input[type=radio]:focus:invalid:focus,
+.pure-form input[type=checkbox]:focus:invalid:focus {
+  outline-color: #e9322d;
+}
+
+.pure-form select {
+  /* Normalizes the height; padding is not sufficient. */
+  height: 2.25em;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.pure-form select[multiple] {
+  height: auto;
+}
+
+.pure-form label {
+  margin: 0.5em 0 0.2em;
+}
+
+.pure-form fieldset {
+  margin: 0;
+  padding: 0.35em 0 0.75em;
+  border: 0;
+}
+
+.pure-form legend {
+  display: block;
+  width: 100%;
+  padding: 0.3em 0;
+  margin-bottom: 0.3em;
+  color: #333;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.pure-form-stacked input[type=text],
+.pure-form-stacked input[type=password],
+.pure-form-stacked input[type=email],
+.pure-form-stacked input[type=url],
+.pure-form-stacked input[type=date],
+.pure-form-stacked input[type=month],
+.pure-form-stacked input[type=time],
+.pure-form-stacked input[type=datetime],
+.pure-form-stacked input[type=datetime-local],
+.pure-form-stacked input[type=week],
+.pure-form-stacked input[type=number],
+.pure-form-stacked input[type=search],
+.pure-form-stacked input[type=tel],
+.pure-form-stacked input[type=color],
+.pure-form-stacked input[type=file],
+.pure-form-stacked select,
+.pure-form-stacked label,
+.pure-form-stacked textarea {
+  display: block;
+  margin: 0.25em 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.pure-form-stacked input:not([type]) {
+  display: block;
+  margin: 0.25em 0;
+}
+
+.pure-form-aligned input,
+.pure-form-aligned textarea,
+.pure-form-aligned select,
+.pure-form-message-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pure-form-aligned textarea {
+  vertical-align: top;
+}
+
+/* Aligned Forms */
+.pure-form-aligned .pure-control-group {
+  margin-bottom: 0.5em;
+}
+
+.pure-form-aligned .pure-control-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+
+.pure-form-aligned .pure-controls {
+  margin: 1.5em 0 0 11em;
+}
+
+/* Rounded Inputs */
+.pure-form input.pure-input-rounded,
+.pure-form .pure-input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+.pure-form .pure-group fieldset {
+  margin-bottom: 10px;
+}
+
+.pure-form .pure-group input,
+.pure-form .pure-group textarea {
+  display: block;
+  padding: 10px;
+  margin: 0 0 -1px;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+
+.pure-form .pure-group input:focus,
+.pure-form .pure-group textarea:focus {
+  z-index: 3;
+}
+
+.pure-form .pure-group input:first-child,
+.pure-form .pure-group textarea:first-child {
+  top: 1px;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+}
+
+.pure-form .pure-group input:first-child:last-child,
+.pure-form .pure-group textarea:first-child:last-child {
+  top: 1px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.pure-form .pure-group input:last-child,
+.pure-form .pure-group textarea:last-child {
+  top: -2px;
+  border-radius: 0 0 4px 4px;
+  margin: 0;
+}
+
+.pure-form .pure-group button {
+  margin: 0.35em 0;
+}
+
+.pure-form .pure-input-1 {
+  width: 100%;
+}
+
+.pure-form .pure-input-3-4 {
+  width: 75%;
+}
+
+.pure-form .pure-input-2-3 {
+  width: 66%;
+}
+
+.pure-form .pure-input-1-2 {
+  width: 50%;
+}
+
+.pure-form .pure-input-1-3 {
+  width: 33%;
+}
+
+.pure-form .pure-input-1-4 {
+  width: 25%;
+}
+
+/* Inline help for forms */
+.pure-form-message-inline {
+  display: inline-block;
+  padding-left: 0.3em;
+  color: #666;
+  vertical-align: middle;
+  font-size: 0.875em;
+}
+
+/* Block help for forms */
+.pure-form-message {
+  display: block;
+  color: #666;
+  font-size: 0.875em;
+}
+
+.head {
+  background: linear-gradient(bottom, #efe9e7, rgba(0, 0, 0, 0.3)), url("https://cdn.pixabay.com/photo/2015/07/10/15/13/architecture-839362_960_720.jpg") center no-repeat;
+  background: -webkit-linear-gradient(bottom, #efe9e7, rgba(0, 0, 0, 0.3)), url("https://cdn.pixabay.com/photo/2015/07/10/15/13/architecture-839362_960_720.jpg") center no-repeat;
+}
+.head h1 {
+  text-align: center;
+  font-size: 60px;
+  color: #a08f57;
+  font-family: Copperplate Gothic Bold;
+  padding: 20% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.head img {
+  padding-top: 20%;
+}
+.head img:hover {
+  opacity: 0.3;
+  transition: 1s all;
+}
+
+.content {
+  margin-top: 5%;
+}
+.content a {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.content a img {
+  -webkit-clip-path: polygon(49% 0, 100% 22%, 100% 78%, 53% 100%, 0 80%, 0 22%);
+          clip-path: polygon(49% 0, 100% 22%, 100% 78%, 53% 100%, 0 80%, 0 22%);
+  transition: 1s all;
+  position: relative;
+}
+.content a .show {
+  display: none;
+  align-self: center;
+  align-items: center;
+  position: absolute;
+  color: #a08f57;
+  font-family: Arial Black;
+  border: 1px solid #a08f57;
+  padding: 0.5%;
+}
+.content a:hover .show {
+  display: block;
+}
+.content a:hover img {
+  opacity: 0.3;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: invert(80%);
+          backdrop-filter: invert(80%);
+}
+.content .disabled .show {
+  display: block;
+}
+.content .disabled img {
+  opacity: 0.3;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: invert(80%);
+          backdrop-filter: invert(80%);
+}
+
+@media (max-width: 580px) {
+  .content a img {
+    -webkit-clip-path: polygon(0 30%, 100% 30%, 100% 60%, 0% 60%);
+            clip-path: polygon(0 30%, 100% 30%, 100% 60%, 0% 60%);
+    margin: -20% 0;
+  }
+}
+.content-t {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 25%;
+}
+
+@media (max-width: 768px) {
+  .content-t {
+    padding: 0% 9%;
+  }
+}
+@media (max-width: 580px) {
+  .content-t {
+    flex-direction: column;
+  }
+}
+.content-b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-b li {
+  margin: 0 1%;
+}
+
+@media (max-width: 768px) {
+  .content-b {
+    padding: 0 15%;
+  }
+}
+@media (max-width: 580px) {
+  .content-b {
+    flex-direction: column;
+  }
+}
+.messenger {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0 10% 0;
+}
+.messenger .calendar {
+  width: 300px;
+  height: 270px;
+  background: #fff;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.messenger .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.messenger .day {
+  text-align: center;
+}
+.messenger .body-list ul {
+  width: 100%;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 14px;
+}
+.messenger .body-list ul li {
+  width: 14.28%;
+  height: 36px;
+  line-height: 36px;
+  list-style-type: none;
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+}
+.messenger .lightgrey {
+  color: #a08f57;
+}
+.messenger .darkgrey {
+  color: #565656;
+  /*深灰色*/
+}
+.messenger .green {
+  color: #a08f57;
+}
+.messenger .greenbox {
+  border: 1px solid #ffe082;
+  background: #ffffb3;
+}
+.messenger .me {
+  color: #a08f57;
+  padding-left: 2%;
+  line-height: 25px;
+  position: relative;
+}
+.messenger .me input {
+  width: 250px;
+}
+.messenger .me .pure-button {
+  background-color: #ffffb3;
+  color: #565656;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 375px) {
+  .messenger {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer {
+  background-color: #a08f57;
+  color: #000;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+}
+.footer .footer-l {
+  display: flex;
+}
+.footer .footer-l .f-1 h3, .footer .footer-l .f-2 h3 {
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+.footer .footer-l .f-1, .footer .footer-l .f-2 {
+  width: 50%;
+  padding: 20px 0;
+  line-height: 30px;
+  margin-top: 5%;
+}
+.footer .footer-l .f-2 a {
+  text-decoration: none;
+  color: #000;
+}
+.footer .footer-l .f-1 {
+  margin-right: 10%;
+}
+.footer .footer-l .mob-logo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 0 15%;
+    align-items: center;
+  }
+}
+@media (max-width: 375px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer .footer-l {
+    flex-direction: column;
+  }
+  .footer .footer-l .f-1, .footer .footer-l .f-2 {
+    width: 100%;
+  }
+  .footer .footer-l .f-1 {
+    margin-right: 0;
+  }
+  .footer .footer-l .f-2 {
+    display: flex;
+    justify-content: bewteen;
+  }
+  .footer .footer-l .mob-logo {
+    display: block;
+  }
+  .footer .footer-logo {
+    display: none;
+  }
+}
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/06/22/20/interior-2596976_960_720.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.information .introduction {
+  text-align: center;
+  margin: 0 20%;
+  padding: 2%;
+  background: #9f8e56;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.information .introduction h3 {
+  font-size: 30px;
+  font-family: Microsoft JhengHei;
+  margin-bottom: 2%;
+}
+.information .introduction p {
+  line-height: 22px;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item li {
+  width: 300px;
+}
+.item li a {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background: #ffffff;
+}
+.item li a img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  position: relative;
+  transition: 1s all;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+}
+.item li a h5 {
+  display: none;
+  color: #a08f57;
+  font-family: Microsoft JhengHei;
+  border: 1px solid #a08f57;
+  position: absolute;
+  align-self: center;
+  align-items: center;
+  padding: 0.8% 5%;
+}
+.item li a:hover h5 {
+  display: block;
+}
+.item li a:hover img {
+  opacity: 0.2;
+  -webkit-backdrop-filter: invert(80%);
+          backdrop-filter: invert(80%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
+}
+.item li.disabled h5 {
+  display: block;
+}
+.item li.disabled img {
+  opacity: 0.2;
+  -webkit-backdrop-filter: invert(80%);
+          backdrop-filter: invert(80%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
+}
+
+.btn {
+  background: #ffffb3;
+  text-align: center;
+  padding: 2.5% 0;
+}
+.btn a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #a08f57;
+  border: 1px solid #a08f57;
+  padding: 1%;
+  transition: 1s all;
+}
+.btn:hover a {
+  color: #fff;
+  background: #ffb74d;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  font-family: Microsoft JhengHei;
+  line-height: 50px;
+}
+.nav li {
+  width: 15%;
+  text-align: center;
+}
+.nav li a {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+}
+.nav li a:hover {
+  background-color: #ffffb3;
+  border-bottom: 2px solid #ffe082;
+}
+.nav li a:disabled {
+  background-color: #ffffb3;
+  border-bottom: 2px solid #ffe082;
+}
+.nav li.disabled a {
+  background-color: #ffffb3;
+  border-bottom: 2px solid #ffe082;
+}
+
+.head-room {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a08f57;
+}
+.head-room .introduction {
+  line-height: 50px;
+}
+.head-room .introduction h3 {
+  font-size: 75px;
+}
+
+@media (max-width: 767px) {
+  .head-room {
+    flex-direction: column;
+  }
+  .head-room .introduction {
+    line-height: 50px;
+    padding: 0 10%;
+  }
+  .head-room .introduction h3 {
+    font-size: 30px;
+  }
+}
+.main-room {
+  background-color: #a08f57;
+  padding: 5% 3%;
+}
+.main-room h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 3%;
+}
+.main-room .min-room {
+  display: flex;
+  justify-content: space-evenly;
+}
+.main-room .min-room li {
+  margin: 0 1%;
+}
+
+.container {
+  display: flex;
+  justify-content: bewteen;
+  margin: 5% 0;
+}
+.container img {
+  width: 100%;
+  object-fit: cover;
+}
+.container .content-l {
+  display: flex;
+  width: 55%;
+}
+.container .content-l h3 {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 75px;
+  z-index: 1;
+  padding: 0 2%;
+}
+.container .content-l img {
+  position: relative;
+}
+.container .content-r {
+  display: flex;
+  width: 45%;
+}
+.container .content-r h3 {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 75px;
+  z-index: 1;
+  right: 0;
+  padding: 0 2%;
+}
+.container .content-r .r-img {
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .content-l {
+    width: 100%;
+  }
+  .container .content-l h3 {
+    font-size: 36px;
+  }
+  .container .content-r {
+    width: 100%;
+  }
+  .container .content-r h3 {
+    font-size: 36px;
+  }
+}
+.head-room .swiper-container {
+  width: 300px;
+  height: 350px;
+  margin: 1% 2% 3% 1%;
+}
+.head-room .swiper-pagination {
+  left: 0;
+  right: none;
+}
+.head-room .swiper-button-prev, .head-room .swiper-button-next {
+  color: #efe9e7;
+}
+
+.wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #efe9e7;
+}
+
+.gray {
+  width: 70%;
+  height: 2px;
+  background-color: gray;
+  margin: 8% auto;
+}
+
+h2 {
+  color: #a08f57;
+  text-align: center;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,44 @@
+@import 'reset';
+@import 'PureForms';
+@import 'head';
+@import 'main';
+@import 'calendar';
+@import 'footer';
+
+@import 'page-1';
+@import 'page-2';
+
+@import 'swiper';
+
+$textcolor-d: #a08f57;
+$textcolor-l: #fff;
+$fontfamily-en :Copperplate Gothic Bold;
+$fontfamily-s :Arial Black;
+$fontfamily-ch :Microsoft JhengHei;  //黑體
+$fontsize-m: 30px;
+$fontsize-s: $fontsize-m* 0.5;
+$fontsize-l: $fontsize-m* 2.5;
+ 
+.wrap {
+	max-width: 1400px;
+	margin: 0 auto;
+	background-color: #efe9e7;
+}
+
+
+.gray {
+		width: 70%;
+		height: 2px;
+		background-color: gray;
+		margin: 8% auto;
+	}
+
+h2 {
+	color: $textcolor-d;
+	text-align: center;
+	font-size: $fontsize-m;
+}
+
+a {
+	text-decoration: none;
+}

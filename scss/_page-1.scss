@@ -1,0 +1,128 @@
+.information {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 600px;
+	background-image: url('https://cdn.pixabay.com/photo/2017/08/06/22/20/interior-2596976_960_720.jpg');
+	background-size: cover;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+
+	
+
+	.introduction {
+		text-align: center;
+		margin: 0 20%;
+		padding: 2%;
+		background: rgb(159, 142, 86);
+		box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+
+		h3 {
+			font-size: $fontsize-m;
+			font-family: $fontfamily-ch;
+			margin-bottom: 2%;
+		}
+
+		p {
+			line-height: 22px;
+		}
+
+
+
+
+	}
+}
+
+
+
+.item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	li {
+		width: 300px;
+
+		a {
+			display: flex;
+			justify-content: center;
+			cursor: pointer;
+			background: #ffffff; 
+
+			img {
+				width: 300px;
+    			height: 300px;
+				object-fit: cover;
+				position: relative;
+				transition: 1s all;
+				box-shadow: 0 3px 5px rgba(0, 0, 0, .16);
+
+			}
+
+			h5{
+				display: none;
+				color:$textcolor-d; 
+				font-family: $fontfamily-ch;
+				border: 1px solid #a08f57;
+				position: absolute;
+				align-self:center;
+				align-items: center;
+				padding : 0.8% 5%;
+			}
+
+
+			&:hover {
+
+				h5 {
+					display: block;
+				}
+				img {
+					opacity: 0.2;
+ 		 			backdrop-filter: invert(80%);
+ 		 			box-shadow: 0 4px 10px rgba(0, 0, 0, .24);
+				}
+
+			}
+		}
+
+		&.disabled {
+			h5 {
+
+				display: block;
+			}
+			img {
+				opacity: 0.2;
+ 		 		backdrop-filter: invert(80%);
+ 		 		box-shadow: 0 4px 10px rgba(0, 0, 0, .24);
+			}
+		}
+		
+	}
+
+
+}
+
+
+.btn {
+	background: #ffffb3;
+	text-align: center;
+	padding: 2.5% 0;
+
+	a {
+		cursor: pointer;
+		text-decoration: none;
+		color: #a08f57;
+		border: 1px solid #a08f57;
+		padding: 1%;
+		transition: 1s all;
+
+	}
+
+	&:hover {
+			a {
+				color: #fff;
+				background: #ffb74d;
+				
+			}
+		}
+
+}

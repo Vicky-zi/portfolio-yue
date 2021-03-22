@@ -1,0 +1,38 @@
+
+$textcolor-d: #a08f57;
+$textcolor-l: #fff;
+$fontfamily-en :Copperplate Gothic Bold;
+$fontfamily-s :Arial Black;
+$fontfamily-ch :Microsoft JhengHei;  //黑體
+$fontsize-m: 30px;
+$fontsize-s: $fontsize-m* 0.5;
+$fontsize-l: $fontsize-m* 2.5;
+
+.head {
+	background:linear-gradient(bottom,#efe9e7,rgba(0,0,0,0.3)),
+	url("https://cdn.pixabay.com/photo/2015/07/10/15/13/architecture-839362_960_720.jpg") center no-repeat;
+	background:-moz-linear-gradient(bottom,#efe9e7,rgba(0,0,0,0.3)),url("https://cdn.pixabay.com/photo/2015/07/10/15/13/architecture-839362_960_720.jpg") center  no-repeat;
+	background:-webkit-linear-gradient(bottom,#efe9e7,rgba(0,0,0,0.3)),url("https://cdn.pixabay.com/photo/2015/07/10/15/13/architecture-839362_960_720.jpg") center no-repeat;
+	
+	
+	h1 {
+		text-align: center;
+		font-size: 60px;
+		color: $textcolor-d;
+		font-family: $fontfamily-en;
+		padding: 20% 0;
+		display: flex;
+		flex-direction:column;
+		align-items: center;
+		cursor: pointer;
+	}
+	img {
+		padding-top:20%;
+
+		&:hover {
+			opacity: 0.3;
+			transition: 1s all;
+		}
+	}
+
+}

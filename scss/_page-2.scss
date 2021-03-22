@@ -1,0 +1,172 @@
+.nav {
+	display: flex;
+	justify-content: center;
+	font-family: $fontfamily-ch;
+	line-height: 50px;
+
+	li {
+		width: 15%;
+		text-align: center;
+			
+		a {
+			display: block;
+			text-decoration:none;
+			cursor: pointer;
+			color: #000;
+
+			&:hover {
+			background-color: #ffffb3;
+			border-bottom: 2px solid #ffe082;
+			}
+
+			&:disabled {
+				background-color: #ffffb3;
+				border-bottom: 2px solid #ffe082;
+
+			}
+
+			
+		}
+
+		&.disabled {
+
+			a {
+				background-color: #ffffb3;
+				border-bottom: 2px solid #ffe082;
+			}
+			
+		}
+	}
+}
+
+.head-room {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $textcolor-d;
+	
+
+	.introduction {
+		line-height: 50px;
+
+		h3 {
+			font-size: $fontsize-l;
+		}
+	}
+}
+
+@media (max-width:767px){ 
+	.head-room { 
+		flex-direction:column;
+
+		.introduction {
+		line-height: 50px;
+		padding: 0 10%;
+
+		h3 {
+			font-size: $fontsize-m;
+		}
+	}
+
+	} 
+}
+
+.main-room {
+	background-color: #a08f57;
+	padding: 5% 3%;
+
+	h2 {
+		color: $textcolor-l;
+		font-size: $fontsize-m;
+		margin-bottom: 3%;
+
+	}
+
+	.min-room {
+	display: flex;
+	justify-content: space-evenly;
+
+		li {
+		margin: 0 1%;
+		}
+	}
+}
+
+
+
+.container {
+	display: flex;
+	justify-content: bewteen;
+	margin: 5% 0;
+
+	img {
+		width: 100%;
+		object-fit: cover;
+
+		}
+
+	.content-l {
+		display: flex;
+		width: 55%;
+		
+
+		h3 {
+			position: absolute;
+			background: rgba(255, 255, 255, .5);
+			font-size: $fontsize-l;
+			z-index: 1;
+			padding:0 2%;
+		}
+		img {
+			position: relative;
+		}
+
+	}
+
+	.content-r {
+		display: flex;
+		width: 45%;
+		
+		
+		h3 {
+			position: absolute;
+			background: rgba(255, 255, 255, .5);
+			font-size: $fontsize-l;
+			z-index: 1;
+			right: 0;
+			padding:0 2%;
+		}
+
+		.r-img {
+			position: relative;
+
+		}
+		
+
+	}
+
+	
+}
+
+@media (max-width:767px){ 
+	.container { 
+		flex-direction:column;
+
+		.content-l {
+			width: 100%;
+
+			h3 {
+				font-size: 36px;
+			}
+		}
+
+		.content-r {
+			width: 100%;
+			h3 {
+				font-size: 36px;
+			}
+
+		}
+	} 
+}
+
